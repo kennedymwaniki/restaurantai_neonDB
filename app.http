@@ -1,0 +1,257 @@
+GET http://localhost:8000/api/users
+
+###
+GET http://localhost:8000/api/users/2
+
+
+###
+PUT http://localhost:8000/api/users/6
+Content-Type: application/json
+
+{
+    "name": "leroy",
+    "contact_phone": "12345666",
+    "phone_verified": true,
+    "email": "lee@gmail.com",
+    "email_verified": true,
+    "confirmation_code": "223",
+    "password": "2222"
+}
+
+###
+DELETE  http://localhost:8000/api/users/13
+
+
+
+///state
+###
+GET http://localhost:8000/api/state
+
+###
+DELETE http://localhost:8000/api/state/15
+
+###
+
+GET http://localhost:8000/api/state/15
+
+###
+//update
+POST  http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+  "name": "YUNO",
+    "contact_phone": "182828373",
+    "phone_verified": true,
+    "email": "YUNO@gmail.com",
+    "email_verified": true,
+    "confirmation_code": "2030",
+    "password": "1234"
+  }
+
+
+###
+
+
+
+
+
+//state
+###
+GET http://localhost:8000/api/state
+
+###
+
+PUT http://localhost:8000/api/state/13
+Content-Type: application/json
+
+{
+   
+   "name": "kutus",
+   "code" : "Kg"
+
+
+}
+###
+
+POST http://localHost/api/state
+Content-Type: application/json
+
+{
+   "name": "maina",
+   "code": "mn"
+
+}
+
+###
+DELETE http://localhost:8000/api/state/2
+
+
+
+//city
+###
+GET http://localhost:8000/api/cities/8
+###
+DELETE http://localhost:8000/api/cities/6
+
+###
+ GET http://localhost:8000/api/cities
+
+###
+ POST http://localhost:8000/api/cities
+Content-Type: application/json
+
+{
+   "name": "maina",
+    "state_id" : 1
+
+}
+
+###
+POST http://localhost:8000/api/cities
+Content-Type: application/json
+
+{
+   "name": "maina",
+    "state_id" : 1
+
+}
+
+
+
+//ADDRESSES
+###
+GET http://localhost:8000/api/address
+
+### //by id
+
+GET http://localhost:8000/api/address/2
+
+### //creating
+POST http://localhost:8000/api/address
+Content-Type: application/json
+
+{
+   "id" : 2,
+   "street_address_1": "456 Elm St",
+  "street_address_2": "Apt 2",
+  "zip_code": "23456",
+  "delivery_instructions": "Leave at the back door",
+  "user_id": 2,
+  "city_id": 2
+}
+
+
+### ///delete
+DELETE http://localhost:8000/api/address/2
+
+
+###
+//category
+GET http://localhost:8000/api/category
+
+###
+GET http://localhost:8000/api/category/3
+###
+POST http://localhost:8000/api/category
+Content-Type: application/json
+
+{
+   "id": 23,
+  "name": "Sushi"
+}
+
+
+###
+DELETE http://localhost:8000/api/category/23
+###
+
+PUT http://localhost:8000/api/category/9
+Content-Type: application/json
+
+{
+   
+   "name" : "JAPANESE"
+
+
+}
+
+
+//restautants
+
+###
+GET http://localhost:8000/api/restaurant
+
+###
+DELETE  http://localhost:8000/api/restaurant/1
+
+###
+POST http://localhost:8000/api/restaurant
+Content-Type: application/json
+
+{
+
+   "name": "Pasta Palace",
+  "street_address": "123 Noodle St",
+  "zip_code": "12345",
+  "city_id": 1
+}
+ 
+###
+PUT http://localhost:8000/api/restaurant/1
+Content-Type: application/json
+
+{
+   "name": "MAMA Palace",
+  "street_address": "123 Noodle St",
+  "zip_code": "12345",
+  "city_id": 1
+
+}
+
+
+//menuItem
+###
+GET http://localhost:8000/api/menuItem
+
+###
+GET http://localhost:8000/api/menuItem/4
+
+###
+DELETE http://localhost:8000/api/menuItem/2
+
+
+/// comments
+###
+GET http://localhost:8000/api/comments
+
+###
+GET http://localhost:8000/api/comments/5
+
+###
+GET http://localhost:8000/api/drivers
+
+###
+GET http://localhost:8000/api/drivers/6
+
+###
+DELETE  http://localhost:8000/api/drivers/4
+
+
+
+
+///orders
+###
+GET http://localhost:8000/api/orders
+
+###
+GET http://localhost:8000/api/orders/2
+
+###
+DELETE http://localhost:8000/api/orders/2
+
+
+
+///order menu Items
+###
+GET http://localhost:8000/api/ordermenu
