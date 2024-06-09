@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.commentRouter = void 0;
+const hono_1 = require("hono");
+const commentController_1 = require("./commentController");
+exports.commentRouter = new hono_1.Hono();
+exports.commentRouter.get("/comments", commentController_1.listComments);
+exports.commentRouter.get("/comments/:id", commentController_1.getComments);
+exports.commentRouter.post("/comments", commentController_1.createComment);
+exports.commentRouter.delete("/comments/:id", commentController_1.deleteComment);
+exports.commentRouter.put("/comments/:id", commentController_1.updateComment);

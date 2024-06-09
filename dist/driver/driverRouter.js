@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.driverRouter = void 0;
+const hono_1 = require("hono");
+const driverController_1 = require("./driverController");
+exports.driverRouter = new hono_1.Hono();
+exports.driverRouter.get("/drivers", driverController_1.getDrivers);
+exports.driverRouter.get("/drivers/:id", driverController_1.getDriver);
+exports.driverRouter.post("/drivers", driverController_1.createDriver);
+exports.driverRouter.put("/drivers/:id", driverController_1.updateDriver);
+exports.driverRouter.delete("/drivers/:id", driverController_1.deleteDriver);

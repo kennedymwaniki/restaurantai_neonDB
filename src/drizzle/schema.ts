@@ -254,6 +254,9 @@ export type TSdriver = typeof driversTable.$inferSelect;
 export type TIorders = typeof ordersTable.$inferInsert;
 export type TSorders = typeof ordersTable.$inferSelect;
 
+export type TIowner = typeof restaurantOwnerTable.$inferInsert;
+export type TSowner = typeof restaurantOwnerTable.$inferSelect;
+
 //order Item types
 export type TIorderMenu = typeof orderMenuItemTable.$inferInsert;
 export type TSorderMenu = typeof orderMenuItemTable.$inferSelect;
@@ -262,7 +265,8 @@ export type TSorderMenu = typeof orderMenuItemTable.$inferSelect;
 export type TIorderstatus = typeof orderStatusTable.$inferInsert;
 export type TSorderstatus = typeof orderStatusTable.$inferSelect;
 
-
+export type TIstatusCatalogue = typeof statusCatalogueTable.$inferInsert;
+export type TSstatusCatalogue = typeof statusCatalogueTable.$inferSelect;
 
 // relationships
 

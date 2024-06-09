@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.categoryRouter = void 0;
+const Hono_1 = require("Hono");
+const categoryController_1 = require("./categoryController");
+exports.categoryRouter = new Hono_1.Hono();
+exports.categoryRouter.get("/category", categoryController_1.listCategory);
+exports.categoryRouter.get("/category/:id", categoryController_1.getCategory);
+exports.categoryRouter.post("/category", categoryController_1.createCategory);
+exports.categoryRouter.put("/category/:id", categoryController_1.updateCategory);
+exports.categoryRouter.delete("/category/:id", categoryController_1.deleteCategory);

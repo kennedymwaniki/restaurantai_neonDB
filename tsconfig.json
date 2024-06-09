@@ -3,6 +3,8 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -11,5 +13,5 @@
     "jsxImportSource": "hono/jsx"
   },
   "include": ["src"],
-  "exclude": ["node_modules/"]
+  "exclude": ["node_module"]
 }

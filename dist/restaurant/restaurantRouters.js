@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.restaurantRouter = void 0;
+const Hono_1 = require("Hono");
+const restaurantController_1 = require("./restaurantController");
+exports.restaurantRouter = new Hono_1.Hono();
+exports.restaurantRouter.get("/restaurant", restaurantController_1.listrestaurant);
+exports.restaurantRouter.get("/restaurant/:id", restaurantController_1.getrestaurant);
+exports.restaurantRouter.post("/restaurant", restaurantController_1.createrestaurant);
+exports.restaurantRouter.delete("/restaurant/:id", restaurantController_1.deleterestaurant);
+exports.restaurantRouter.put("/restaurant/:id", restaurantController_1.updaterestaurant);

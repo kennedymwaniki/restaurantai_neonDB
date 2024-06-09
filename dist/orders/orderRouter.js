@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.orderRouter = void 0;
+const Hono_1 = require("Hono");
+const orderController_1 = require("./orderController");
+exports.orderRouter = new Hono_1.Hono();
+exports.orderRouter.get("/orders", orderController_1.listOrders);
+exports.orderRouter.get("/orders/:id", orderController_1.getOrder);
+exports.orderRouter.post("/orders", orderController_1.createOrder);
+exports.orderRouter.put("/orders/:id", orderController_1.updateOrder);
+exports.orderRouter.delete("/orders/:id", orderController_1.deleteOrder);

@@ -8,7 +8,7 @@ export const cityService = async () => {
 };
 
 //byID
-export const getCityService = async (id: number): Promise<TScity> => {
+export const getCityService = async (id: number) => {
   return await db.query.cityTable.findFirst({
     where: eq(cityTable.id, id),
   });
