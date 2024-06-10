@@ -50,6 +50,34 @@
       "when": 1717875363737,
       "tag": "0006_fresh_junta",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1718018761073,
+      "tag": "0007_absent_sunset_bain",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1718019076171,
+      "tag": "0008_long_xavin",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1718020962225,
+      "tag": "0009_cool_blur",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1718039531556,
+      "tag": "0010_same_rattler",
+      "breakpoints": true
     }
   ]
 }

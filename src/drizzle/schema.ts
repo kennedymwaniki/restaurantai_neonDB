@@ -193,11 +193,34 @@ export const usersTable = pgTable("users", {
   name: varchar("name", { length: 256 }),
   contact_phone: varchar("contact_phone", { length: 20 }),
   phone_verified: boolean("phone_verified"),
-  email: varchar("email", { length: 256 }),
+  email: varchar("email", { length: 256 }).unique(),
   email_verified: boolean("email_verified"),
   confirmation_code: varchar("confirmation_code", { length: 256 }),
-  password: varchar("password", { length: 256 }),
+  password: varchar("password", { length: 256 }).unique(),
 });
+
+//AUTH_user table
+export const roleEnum = pgEnum("role", ["admin", "user"]);
+
+// The auth_user table schema
+export const authUsers = pgTable("auth_users", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id")
+    .notNull()
+    .references(() => usersTable.id, { onDelete: "cascade" }),
+  password: varchar("password", { length: 100 }),
+  username: varchar("username", { length: 100 }),
+  role: roleEnum("role").default("user"),
+});
+
+
+// auth relations
+export const authUserRelations = relations(authUsers, ({ one }) => ({
+  user: one(usersTable, {
+    fields: [authUsers.userId],
+    references: [usersTable.id],
+  }),
+}));
 
 export const restaurantOwnerTable = pgTable("restaurant_owner", {
   id: serial("id").primaryKey(),
@@ -268,6 +291,8 @@ export type TSorderstatus = typeof orderStatusTable.$inferSelect;
 export type TIstatusCatalogue = typeof statusCatalogueTable.$inferInsert;
 export type TSstatusCatalogue = typeof statusCatalogueTable.$inferSelect;
 
+export type TIAuthUser = typeof authUsers.$inferInsert;
+export type TSAuthUser = typeof authUsers.$inferSelect;
 // relationships
 
 //1 menu_item
