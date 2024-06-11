@@ -14,10 +14,9 @@ import { orderRouter } from "./orders/orderRouter";
 import { orderMenuItemRouter } from "./order_menu_item/orderMenuRouter";
 import { authRouter } from "./auth/authRouter";
 
+const app = new Hono();
 
-const app = new Hono().basePath("/api");
-
-app.get("api/", (c) => {
+app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
 
@@ -25,18 +24,18 @@ app.get("/news", (c) => {
   return c.text("Hello ken");
 });
 
-app.route("/", userRouter);
-app.route("/", cityRouter);
-app.route("/", stateRouter);
-app.route("/", addressRouter);
-app.route("/", categoryRouter);
-app.route("/", restaurantRouter);
-app.route("/", menuRouter);
-app.route("/", commentRouter);
-app.route("/", driverRouter);
-app.route("/", orderRouter);
-app.route("/", orderMenuItemRouter);
-app.route("auth/", authRouter);  /// api/auth/register  or api/
+app.route("/api", userRouter);
+app.route("/api", cityRouter);
+app.route("/api", stateRouter);
+app.route("/api", addressRouter);
+app.route("/api", categoryRouter);
+app.route("/api", restaurantRouter);
+app.route("/api", menuRouter);
+app.route("/api", commentRouter);
+app.route("/api", driverRouter);
+app.route("/api", orderRouter);
+app.route("/api", orderMenuItemRouter);
+app.route("/api/auth", authRouter); /// api/auth/register  or api/
 
 // example
 
