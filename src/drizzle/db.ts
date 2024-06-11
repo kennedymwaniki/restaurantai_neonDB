@@ -23,7 +23,7 @@ import * as schema from "./schema";
 
 config({ path: ".env" });
 
-export const client = neon(process.env.DATABASE_URL!);
+export const client = neon(process.env.Database_URL!);
 export const db = drizzle(client, { schema, logger: true });
 
 export default db;
