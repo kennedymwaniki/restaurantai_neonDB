@@ -17,7 +17,7 @@ import { authRouter } from "./auth/authRouter";
 
 const app = new Hono().basePath("/api");
 
-app.get("/", (c) => {
+app.get("api/", (c) => {
   return c.text("Hello Hono!");
 });
 
