@@ -43,7 +43,7 @@ export const loginUser = async (c: Context) => {
       return c.json({ error: "Invalid credentials" }, 401); // unauthorized
     } else {
       // create a payload
-      const payload = {
+      let payload = {
         sub: foundUser?.username,
         role: foundUser?.role,
         //session to expire after 3hours

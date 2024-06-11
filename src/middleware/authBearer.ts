@@ -37,3 +37,6 @@ export const authenticateAdmin = async (c: Context, next: Next) =>
 
 export const authenticateUser = async (c: Context, next: Next) =>
   authMiddleware(c, next, "user");
+
+export const authentAll = async (c: Context, next: Next) =>
+  authMiddleware(c, next, "user" || "admin");

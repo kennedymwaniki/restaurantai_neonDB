@@ -213,7 +213,6 @@ export const authUsers = pgTable("auth_users", {
   role: roleEnum("role").default("user"),
 });
 
-
 // auth relations
 export const authUserRelations = relations(authUsers, ({ one }) => ({
   user: one(usersTable, {

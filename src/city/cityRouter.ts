@@ -7,12 +7,17 @@ import {
   listCities,
   updateCity,
 } from "./cityController";
+import {
+  authentAll,
+  authenticateAdmin,
+  authenticateUser,
+} from "../middleware/authBearer";
 
 export const cityRouter = new Hono();
 
-cityRouter.get("/cities", listCities);
-cityRouter.get("/cities/:id", getCity);
-cityRouter.post("/cities", createCity);
+cityRouter.get("/cities", authenticateAdmin, listCities);
+cityRouter.get("/cities/:id", authentAll, getCity);
+cityRouter.post("/cities", authenticateAdmin, createCity);
 cityRouter.delete("/cities/:id", deleteCity);
 // cityRouter.get("/cities/:id", listCities);
 cityRouter.put("/cities/:id", updateCity);
