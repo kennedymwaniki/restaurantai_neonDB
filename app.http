@@ -2,7 +2,7 @@ GET http://localhost:8000/api/users
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYXNoYSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MDkwNjE5fQ.3EtEXyFOEDAzQbxRjSRqY327lDmxPWSQ9hCTLNtyCBs
 ###
 GET http://localhost:8000/api/users/2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYXNoYSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MDkwNjE5fQ.3EtEXyFOEDAzQbxRjSRqY327lDmxPWSQ9hCTLNtyCBs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYXNoYSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MTE1MDY0fQ.pPwCxWjiGCyBA6XBU3XiTf7zuGMxFj6_N7rwyZBIBug
 
 
 ###
