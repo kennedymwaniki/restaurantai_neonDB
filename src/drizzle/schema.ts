@@ -200,7 +200,7 @@ export const usersTable = pgTable("users", {
 });
 
 //AUTH_user table
-export const roleEnum = pgEnum("role", ["admin", "user"]);
+export const roleEnum = pgEnum("role", ["admin", "user", "both"]);
 
 // The auth_user table schema
 export const authUsers = pgTable("auth_users", {

@@ -6,11 +6,17 @@ import {
   deleteCategory,
   updateCategory,
 } from "./categoryController";
+import {
+  adminRoleAuth,
+  authMiddleware,
+  bothRoleAuth,
+} from "../middleware/authBearer";
 
 export const categoryRouter = new Hono();
+// categoryRouter.use("*", authenticateAdmin);
 
-categoryRouter.get("/category", listCategory);
-categoryRouter.get("/category/:id", getCategory);
-categoryRouter.post("/category", createCategory);
-categoryRouter.put("/category/:id", updateCategory);
-categoryRouter.delete("/category/:id", deleteCategory);
+categoryRouter.get("/category", bothRoleAuth, listCategory);
+categoryRouter.get("/category/:id", bothRoleAuth, getCategory);
+categoryRouter.post("/category", adminRoleAuth, createCategory);
+categoryRouter.put("/category/:id", adminRoleAuth, updateCategory);
+categoryRouter.delete("/category/:id", adminRoleAuth, deleteCategory);

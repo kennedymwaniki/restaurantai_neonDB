@@ -1,4 +1,8 @@
-import { authenticateAdmin, authenticateUser } from "../middleware/authBearer";
+import {
+  adminRoleAuth,
+  bothRoleAuth,
+  userRoleAuth,
+} from "../middleware/authBearer";
 import {
   getUser,
   listUsers,
@@ -9,10 +13,11 @@ import {
 import { Hono } from "hono";
 
 export const userRouter = new Hono();
+// userRouter.use("*", adminRoleAuth);
 
 // get users route
-userRouter.get("/users", authenticateAdmin, listUsers);
-userRouter.get("/users/:id", authenticateUser, getUser);
+userRouter.get("/users", bothRoleAuth, listUsers);
+userRouter.get("/users/:id", getUser);
 userRouter.post("/users", createUser);
 
 // create a user

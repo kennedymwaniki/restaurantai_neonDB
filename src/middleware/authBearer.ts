@@ -1,42 +1,47 @@
 import "dotenv/config";
 import { verify } from "hono/jwt";
 import { Context, Next } from "hono";
+import { ne } from "drizzle-orm";
 
-// where we are authenticating
+interface HonoRequest<T, U> {
+    user?: T;
+    // Add other properties if needed
+}
+
+// AUTHRNICATION MIDDLEWARE
 export const verifyToken = async (token: string, secret: string) => {
-  try {
-    const decoded = await verify(token as string, secret);
-    return decoded;
-  } catch (error: any) {
-    return null;
-  }
-};
-// where we are authorizing
-export const authMiddleware = async (
-  c: Context,
-  next: Next,
-  requiredRole: string
-) => {
-  const token = c.req.header("Authorization");
+    try {
+        const decoded = await verify(token as string, secret);
+        return decoded;
 
-  if (!token) return c.json({ error: "Please provide a token" }, 401);
+    } catch (error: any) {
+        return null;
+    }
+}
 
-  const decoded = await verifyToken(token, process.env.JWT_SECRET as string);
+// AUTHORIZATION MIDDLEWARE
+export const authMiddleware = async (c: Context & { req: HonoRequest<any, unknown> }, next: Next, requiredRole: string) => {
+    const token = c.req.header("Authorization");
 
-  if (!decoded) return c.json({ error: "Invalid token" }, 401);
+    if (!token) return c.json({ error: "Token is required" }, 401);
+    const decoded = await verifyToken(token as string, process.env.JWT_SECRET as string);
 
-  // check roles 'Forbidden'
-  if (decoded.role !== requiredRole)
-    return c.json({ error: "Access denied ❌🚫💔" }, 401);
+    if (!decoded) return c.json({ error: "Invalid token" }, 401);
 
-  return next();
-};
-// roles
-export const authenticateAdmin = async (c: Context, next: Next) =>
-  authMiddleware(c, next, "admin");
+    if (requiredRole === "both") {
+        if (decoded.role === "admin" || decoded.role === "user") {
+            c.req.user = decoded;
+            return next();
+        }
+    } else if (decoded.role === requiredRole) {
+        c.req.user = decoded;
+        return next();
+    }
 
-export const authenticateUser = async (c: Context, next: Next) =>
-  authMiddleware(c, next, "user");
+    return c.json({ error: "Unauthorized" }, 401);
+}
 
-export const authentAll = async (c: Context, next: Next) =>
-  authMiddleware(c, next, "user" || "admin");
+
+export const adminRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "admin");
+export const userRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "user");
+export const bothRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "both");

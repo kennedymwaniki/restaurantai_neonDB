@@ -8,16 +8,16 @@ import {
   updateCity,
 } from "./cityController";
 import {
-  authentAll,
-  authenticateAdmin,
-  authenticateUser,
+  adminRoleAuth,
+  bothRoleAuth,
+  userRoleAuth,
 } from "../middleware/authBearer";
 
 export const cityRouter = new Hono();
 
-cityRouter.get("/cities", authenticateAdmin, listCities);
-cityRouter.get("/cities/:id", authentAll, getCity);
-cityRouter.post("/cities", authenticateAdmin, createCity);
+cityRouter.get("/cities", bothRoleAuth, listCities);
+cityRouter.get("/cities/:id", getCity);
+cityRouter.post("/cities", createCity);
 cityRouter.delete("/cities/:id", deleteCity);
 // cityRouter.get("/cities/:id", listCities);
 cityRouter.put("/cities/:id", updateCity);
