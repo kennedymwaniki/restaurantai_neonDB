@@ -34,5 +34,6 @@ export const authMiddleware = async (
 // roles
 export const authenticateAdmin = async (c: Context, next: Next) =>
   authMiddleware(c, next, "admin");
+
 export const authenticateUser = async (c: Context, next: Next) =>
   authMiddleware(c, next, "user");
