@@ -49,7 +49,8 @@ export const loginUser = async (c: Context) => {
         //session to expire after 3hours
         exp: Math.floor(Date.now() / 1000) + 60 * 180,
       };
-      let secret = process.env.JWT_SECRET as string; // secret key
+      // secret key from env
+      let secret = process.env.JWT_SECRET as string;
       const token = await sign(payload, secret); // create a JWT token
       let user = foundUser?.user;
       let role = foundUser?.role;
