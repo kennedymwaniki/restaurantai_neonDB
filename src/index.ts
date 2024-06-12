@@ -16,11 +16,24 @@ import { authRouter } from "./auth/authRouter";
 import { ownerRouter } from "./restaurant_owner/restaurantOwnerRouter";
 import { catalogueRouter } from "./statusCatalogue/statusCatalogueRouter";
 import { orderStatusRouter } from "./orderStatus/orderStatusRouter";
+import fs from "fs";
+import path from "path";
 
 const app = new Hono();
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
+// app.get("/", (c) => {
+//   return c.text("Hello Hono!");
+// });
+
+app.get("/", async (c) => {
+  try {
+    const filePath = path.join(__dirname, "index.html");
+    const fileContent = await fs.promises.readFile(filePath, "utf-8");
+    return c.html(fileContent);
+  } catch (error) {
+    console.error("Error reading HTML file:", error);
+    return c.text("Internal Server Error", 500);
+  }
 });
 
 app.get("/news", (c) => {
