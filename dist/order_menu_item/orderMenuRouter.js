@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.orderMenuItemRouter = void 0;
+const hono_1 = require("hono");
+const orderMenuController_1 = require("./orderMenuController");
+const authBearer_1 = require("../middleware/authBearer");
+exports.orderMenuItemRouter = new hono_1.Hono();
+exports.orderMenuItemRouter.get("/ordermenu", authBearer_1.bothRoleAuth, orderMenuController_1.listOrderMenuItem);
+exports.orderMenuItemRouter.get("/ordermenu/:id", authBearer_1.bothRoleAuth, orderMenuController_1.getOrderMenuItem);
+exports.orderMenuItemRouter.post("/ordermenu", authBearer_1.adminRoleAuth, orderMenuController_1.createOrderMenuItem);
+exports.orderMenuItemRouter.put("/ordermenu/:id", authBearer_1.adminRoleAuth, orderMenuController_1.updateOrderMenuItem);
+exports.orderMenuItemRouter.delete("/ordermenu", authBearer_1.adminRoleAuth, orderMenuController_1.deleteOrderMenuItem);

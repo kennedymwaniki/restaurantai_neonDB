@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.categoryRouter = void 0;
+const hono_1 = require("hono");
+const categoryController_1 = require("./categoryController");
+const authBearer_1 = require("../middleware/authBearer");
+exports.categoryRouter = new hono_1.Hono();
+// categoryRouter.use("*", authenticateAdmin);
+exports.categoryRouter.get("/category", authBearer_1.bothRoleAuth, categoryController_1.listCategory);
+exports.categoryRouter.get("/category/:id", authBearer_1.bothRoleAuth, categoryController_1.getCategory);
+exports.categoryRouter.post("/category", authBearer_1.adminRoleAuth, categoryController_1.createCategory);
+exports.categoryRouter.put("/category/:id", authBearer_1.adminRoleAuth, categoryController_1.updateCategory);
+exports.categoryRouter.delete("/category/:id", authBearer_1.adminRoleAuth, categoryController_1.deleteCategory);

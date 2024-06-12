@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.orderRouter = void 0;
+const authBearer_1 = require("./../middleware/authBearer");
+const hono_1 = require("hono");
+const orderController_1 = require("./orderController");
+exports.orderRouter = new hono_1.Hono();
+exports.orderRouter.get("/orders", authBearer_1.bothRoleAuth, orderController_1.listOrders);
+exports.orderRouter.get("/orders/:id", authBearer_1.bothRoleAuth, orderController_1.getOrder);
+exports.orderRouter.post("/orders", authBearer_1.adminRoleAuth, orderController_1.createOrder);
+exports.orderRouter.put("/orders/:id", authBearer_1.adminRoleAuth, orderController_1.updateOrder);
+exports.orderRouter.delete("/orders/:id", authBearer_1.adminRoleAuth, orderController_1.deleteOrder);
