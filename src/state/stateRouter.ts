@@ -6,12 +6,13 @@ import {
   getState,
   updateState,
 } from "./stateController";
+import { adminRoleAuth, bothRoleAuth } from "../middleware/authBearer";
 
 export const stateRouter = new Hono();
 
 // get users route
-stateRouter.get("/state", listState);
-stateRouter.get("/state/:id", getState);
-stateRouter.post("/state", createState);
-stateRouter.delete("/state/:id", deleteState);
-stateRouter.put("/state/:id", updateState);
+stateRouter.get("/state", bothRoleAuth, listState);
+stateRouter.get("/state/:id", bothRoleAuth, getState);
+stateRouter.post("/state", adminRoleAuth, createState);
+stateRouter.delete("/state/:id", adminRoleAuth, deleteState);
+stateRouter.put("/state/:id", adminRoleAuth, updateState);

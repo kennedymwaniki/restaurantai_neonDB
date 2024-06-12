@@ -1,3 +1,4 @@
+import { adminRoleAuth, bothRoleAuth } from './../middleware/authBearer';
 import { Hono } from "hono";
 import {
   createOwner,
@@ -9,8 +10,8 @@ import {
 
 export const ownerRouter = new Hono();
 
-ownerRouter.get("/owner", getOwners);
-ownerRouter.get("/owner/:id", getOwner);
-ownerRouter.delete("/owner/:id", deleteOwner);
-ownerRouter.post("/owner", createOwner);
-ownerRouter.put("/owner", updateOwner);
+ownerRouter.get("/owner", bothRoleAuth,getOwners);
+ownerRouter.get("/owner/:id",bothRoleAuth, getOwner);
+ownerRouter.delete("/owner/:id",adminRoleAuth, deleteOwner);
+ownerRouter.post("/owner", adminRoleAuth,createOwner);
+ownerRouter.put("/owner", adminRoleAuth,updateOwner);

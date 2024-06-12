@@ -252,7 +252,9 @@ DELETE  http://localhost:8000/api/drivers/4
 
 
 
-
+///catalogue
+###
+GET http://localhost:8000/api/catalogue
 ///orders
 ###
 GET http://localhost:8000/api/orders

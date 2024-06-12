@@ -17,7 +17,7 @@ export const userRouter = new Hono();
 
 // get users route
 userRouter.get("/users", bothRoleAuth, listUsers);
-userRouter.get("/users/:id", getUser);
+userRouter.get("/users/:id",bothRoleAuth, getUser);
 userRouter.post("/users", createUser);
 
 // create a user
