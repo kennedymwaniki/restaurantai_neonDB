@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
-    "build": "tsc",
+    "postbuild": "cp src/index.html dist/",
+    "build": "tsc && cp src/index.html dist/",
     "studio": "drizzle-kit studio",
     "push": "drizzle-kit generate && tsx src/drizzle/migrate.ts"
   },
