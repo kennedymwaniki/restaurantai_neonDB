@@ -16,8 +16,8 @@ import {
 export const cityRouter = new Hono();
 
 cityRouter.get("/cities", bothRoleAuth, listCities);
-cityRouter.get("/cities/:id", getCity);
-cityRouter.post("/cities", createCity);
-cityRouter.delete("/cities/:id", deleteCity);
+cityRouter.get("/cities/:id", bothRoleAuth,getCity);
+cityRouter.post("/cities", adminRoleAuth,createCity);
+cityRouter.delete("/cities/:id", adminRoleAuth,deleteCity);
 // cityRouter.get("/cities/:id", listCities);
-cityRouter.put("/cities/:id", updateCity);
+cityRouter.put("/cities/:id",adminRoleAuth, updateCity);

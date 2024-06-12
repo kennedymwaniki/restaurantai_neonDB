@@ -6,11 +6,12 @@ import {
   listmenu,
   updateMenu,
 } from "./menuItemController";
+import { adminRoleAuth, bothRoleAuth } from "../middleware/authBearer";
 
 export const menuRouter = new Hono();
 
-menuRouter.get("/menuItem", listmenu);
-menuRouter.get("/menuItem/:id", getMenu);
-menuRouter.post("/menuItem", createmenu);
-menuRouter.delete("/menuItem/:id", deleteMenu);
-menuRouter.put("/menuItem/id", updateMenu);
+menuRouter.get("/menuItem", bothRoleAuth, listmenu);
+menuRouter.get("/menuItem/:id", bothRoleAuth, getMenu);
+menuRouter.post("/menuItem", adminRoleAuth, createmenu);
+menuRouter.delete("/menuItem/:id", adminRoleAuth, deleteMenu);
+menuRouter.put("/menuItem/id", adminRoleAuth, updateMenu);

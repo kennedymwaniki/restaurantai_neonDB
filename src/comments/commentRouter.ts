@@ -6,11 +6,12 @@ import {
   getComments,
   updateComment,
 } from "./commentController";
+import { adminRoleAuth, bothRoleAuth } from "../middleware/authBearer";
 
 export const commentRouter = new Hono();
 
-commentRouter.get("/comments", listComments);
-commentRouter.get("/comments/:id", getComments);
-commentRouter.post("/comments", createComment);
-commentRouter.delete("/comments/:id", deleteComment);
-commentRouter.put("/comments/:id", updateComment);
+commentRouter.get("/comments",bothRoleAuth, listComments);
+commentRouter.get("/comments/:id", bothRoleAuth   ,getComments);
+commentRouter.post("/comments",    adminRoleAuth,createComment);
+commentRouter.delete("/comments/:id", adminRoleAuth,deleteComment);
+commentRouter.put("/comments/:id", adminRoleAuth,updateComment);

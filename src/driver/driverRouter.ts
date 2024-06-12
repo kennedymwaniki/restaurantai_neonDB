@@ -1,3 +1,4 @@
+import { adminRoleAuth, bothRoleAuth } from './../middleware/authBearer';
 import { Hono } from "hono";
 import {
   getDriver,
@@ -9,8 +10,8 @@ import {
 
 export const driverRouter = new Hono();
 
-driverRouter.get("/drivers", getDrivers);
-driverRouter.get("/drivers/:id", getDriver);
-driverRouter.post("/drivers", createDriver);
-driverRouter.put("/drivers/:id", updateDriver);
-driverRouter.delete("/drivers/:id", deleteDriver);
+driverRouter.get("/drivers", bothRoleAuth,getDrivers);
+driverRouter.get("/drivers/:id", bothRoleAuth,getDriver);
+driverRouter.post("/drivers",adminRoleAuth, createDriver);
+driverRouter.put("/drivers/:id",adminRoleAuth ,updateDriver);
+driverRouter.delete("/drivers/:id",adminRoleAuth, deleteDriver);
