@@ -1,3 +1,4 @@
+import { usersTable } from "./../drizzle/schema";
 import {
   addressTable,
   TIaddress,
@@ -48,4 +49,10 @@ export const deleteAddressService = async (id: number) => {
   }
   await db.delete(addressTable).where(eq(addressTable.id, id));
   return "address deleted successfully";
+};
+
+export const getAddressByserId = async (id: number) => {
+  await db.query.usersTable.findMany({
+    where: eq(usersTable.id, id),
+  });
 };

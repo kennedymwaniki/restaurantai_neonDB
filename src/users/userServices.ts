@@ -33,8 +33,20 @@ export const deleteUserService = async (id: number) => {
 //get oorder by a user
 
 export const getUserOrdersService = async (id: number) => {
-  return await db.query.ordersTable.findMany({
-    where: eq(ordersTable.user_id, id),
+  return await db.query.usersTable.findFirst({
+    where: eq(usersTable.id, id),
+    columns: {
+      name: true,
+      contact_phone: true,
+      email: true,
+    },
+    with: {
+      orders: {
+        columns: {
+          price: true,
+          discount: true,
+        },
+      },
+    },
   });
 };
-

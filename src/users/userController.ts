@@ -82,10 +82,10 @@ export const deleteUser = async (c: Context) => {
 };
 
 export const getUserOrders = async (c: Context) => {
-  const userId = Number(c.req.param("id"));
-  if (isNaN(userId)) return c.text("Invalid ID", 400);
-
   try {
+    const userId = Number(c.req.param("id"));
+    if (isNaN(userId)) return c.text("Invalid ID", 400);
+
     const orders = await getUserOrdersService(userId);
     return c.json(orders, 200);
   } catch (error: any) {

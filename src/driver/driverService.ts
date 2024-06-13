@@ -30,3 +30,21 @@ export const deleteDriverService = async (id: number) => {
   await db.delete(driversTable).where(eq(driversTable.id, id));
   return "driver deleted successfully";
 };
+
+export const getDriverOrderService = async (id: number) => {
+  return await db.query.driversTable.findFirst({
+    where: eq(driversTable.id, id),
+    columns: {
+      id: true,
+      car_make: true,
+    },
+    with: {
+      orders: {
+        columns: {
+          discount: true,
+          price: true,
+        },
+      },
+    },
+  });
+};

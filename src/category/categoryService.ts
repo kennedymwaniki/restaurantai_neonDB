@@ -30,3 +30,5 @@ export const deleteCategoryService = async (id: number) => {
   await db.delete(categoryTable).where(eq(categoryTable.id, id));
   return "category deleted successfully";
 };
+
+

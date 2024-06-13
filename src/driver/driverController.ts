@@ -6,7 +6,9 @@ import {
   deleteDriverService,
   getDriverService,
   updateDriverService,
+  getDriverOrderService,
 } from "./driverService";
+import { getOrdersByDriverIdService } from "../orders/orderService";
 
 // get all users
 export const getDrivers = async (c: Context) => {
@@ -74,5 +76,18 @@ export const deleteDriver = async (c: Context) => {
   } catch (error: any) {
     console.error(error?.message);
     return c.json({ error: error?.message }, 500);
+  }
+};
+
+export const getDriverOrder = async (c: Context) => {
+  try {
+    const id = Number(c.req.param("id"));
+    console.log(id);
+    if (isNaN(id)) return c.text("Invalid ID", 400);
+
+    const orders = await getDriverOrderService(id);
+    return c.json(orders, 200);
+  } catch (error: any) {
+    return c.json({ error: error?.message }, 400);
   }
 };
