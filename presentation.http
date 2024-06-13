@@ -1,0 +1,362 @@
+///addresses
+GET http://localhost:8000/api/address
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtc28iLCJyb2xlIjoidXNlciIsImV4cCI6MTcxODIyMjMzMn0.EhpMmvqgROFRn6vnWVZQbhO1OjyaZZkIIVls4USb3oE
+
+###
+GET http://localhost:8000/api/address/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtc28iLCJyb2xlIjoidXNlciIsImV4cCI6MTcxODIyMjMzMn0.EhpMmvqgROFRn6vnWVZQbhO1OjyaZZkIIVls4USb3oE
+###
+POST http://localhost:8000/api/address
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtc28iLCJyb2xlIjoidXNlciIsImV4cCI6MTcxODIyMjMzMn0.EhpMmvqgROFRn6vnWVZQbhO1OjyaZZkIIVls4USb3oE
+Content-Type: application/json
+
+{
+  
+  "street_address_1": "456 Elm St",
+  "street_address_2": "Apt 2",
+  "zip_code": "23456",
+  "delivery_instructions": "Leave at the back door",
+  "user_id": 2,
+  "city_id": 2,
+  
+}
+
+###
+PUT http://localhost:8000/api/address/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: application/json
+
+{
+  
+  "street_address_1": "456 Elm St",
+  "street_address_2": "Apt 2",
+  "zip_code": "23456",
+  "delivery_instructions": "Leave at the back door",
+  "user_id": 1,
+  "city_id": 1
+  
+}
+
+###
+DELETE http://localhost:8000/api/address/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+
+
+//// category
+###
+GET http://localhost:8000/api/category
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/category/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/category
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/category/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/city/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+//CITY
+
+GET http://localhost:8000/api/city
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/city/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/city
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/city/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/city/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+///COMMENT
+###
+GET http://localhost:8000/api/comments/userIdComment/2
+###
+GET http://localhost:8000/api/comments
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/comments/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/comments
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/comments/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/comment/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+
+//DRIVER
+
+GET http://localhost:8000/api/driver
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+GET http://localhost:8000/api/driver/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/driver
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/driver/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/driver/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+
+/.MENUITEM
+
+GET http://localhost:8000/api/menuItem
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/menuItem/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/menuItem
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/menuItem/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/menuItem/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+
+
+//ORDERMENU
+
+
+GET http://localhost:8000/api/ordermenu
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/ordermenu/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/ordermenu
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/ordermenu/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/ordermenu/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+//ORDERS
+###
+GET http://localhost:8000/api/orders
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/orders/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+
+###
+GET http://localhost:8000/api/ordersDriver/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+POST http://localhost:8000/api/orders
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/orders/1
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/orders/1
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+
+###
+GET http://localhost:8000/api/users/userOrder/1
+
+//ORDERSTATUS
+
+###
+GET http://localhost:8000/api/orderStatus
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/orderStatus/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/orderStatus
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/orderStatus/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/orderStatus/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+
+///restaurant
+###
+
+GET http://localhost:8000/api/restaurant
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/restaurant/2
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/restaurant
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/restaurant/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/restaurant/1
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/restaurant/menuItems/2
+
+//restaurantOwner
+###
+
+GET http://localhost:8000/api/owner
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/owner/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/owner
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/owner/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/owner/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+
+///state
+###
+
+
+GET http://localhost:8000/api/state
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+GET http://localhost:8000/api/state/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/state
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/state/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/state/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/stateCities/1
+
+
+///statusCatalogue
+###
+
+GET http://localhost:8000/api/catalogue
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/catalogue/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/catalogue
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/catalogue/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/catalogue/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+
+///user
+
+###
+GET http://localhost:8000/api/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+
+###
+GET http://localhost:8000/api/user/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+###
+POST http://localhost:8000/api/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+PUT http://localhost:8000/api/user/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo
+Content-Type: 
+
+###
+DELETE http://localhost:8000/api/user/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXZpYW4iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMjI4NzJ9.3gmMWq8NV2Q0E3ZgVWRRwEwMIVcLUaq5I9oSnxvJzBo

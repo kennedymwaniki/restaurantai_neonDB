@@ -10,9 +10,11 @@ import {
   deleteOrder,
   getOrder,
   updateOrder,
+  getOrdersByDriverId,
 } from "./orderController";
 
 export const orderRouter = new Hono();
+orderRouter.get("/ordersDriver/:id", getOrdersByDriverId);
 
 orderRouter.get("/orders", bothRoleAuth, listOrders);
 orderRouter.get("/orders/:id", bothRoleAuth, getOrder);

@@ -1,4 +1,9 @@
-import { addressTable, TIaddress, TSaddress } from "../drizzle/schema";
+import {
+  addressTable,
+  TIaddress,
+  TSaddress,
+  cityTable,
+} from "../drizzle/schema";
 import db from "../drizzle/db";
 
 import { eq } from "drizzle-orm";
@@ -21,15 +26,26 @@ export const getAddressService = async (
 
 export const createAddressService = async (user: TIaddress) => {
   await db.insert(addressTable).values(user);
-  return "state created successfully";
+  return "address created successfully";
 };
 
 export const updateAddressService = async (id: number, user: TIaddress) => {
   await db.update(addressTable).set(user).where(eq(addressTable.id, id));
-  return "state updated successfully";
+  return "address updated successfully";
+};
+
+//Service to get an address by ID
+export const getAddressByIdService = async (id: number) => {
+  return await db.query.addressTable.findFirst({
+    where: eq(addressTable.id, id),
+  });
 };
 
 export const deleteAddressService = async (id: number) => {
+  const address = await getAddressByIdService(id);
+  if (!address) {
+    return "No such address exists"; // Indicate that the address does not exist
+  }
   await db.delete(addressTable).where(eq(addressTable.id, id));
-  return "state deleted successfully";
+  return "address deleted successfully";
 };

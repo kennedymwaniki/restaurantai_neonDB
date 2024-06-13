@@ -9,6 +9,7 @@ import {
   createUser,
   updateUser,
   deleteUser,
+  getUserOrders,
 } from "./userController";
 import { Hono } from "hono";
 
@@ -17,16 +18,18 @@ export const userRouter = new Hono();
 
 // get users route
 userRouter.get("/users", bothRoleAuth, listUsers);
-userRouter.get("/users/:id",bothRoleAuth, getUser);
-userRouter.post("/users", createUser);
+userRouter.get("/users/:id", getUser);
+userRouter.post("/users", adminRoleAuth, createUser);
 
 // create a user
 
 //update a user
-userRouter.put("/users/:id", updateUser);
+userRouter.put("/users/:id", adminRoleAuth, updateUser);
 // delete user
-userRouter.delete("/users/:id", deleteUser);
+userRouter.delete("/users/:id", adminRoleAuth, deleteUser);
 
 //delete user
-userRouter.post("/users/:id", deleteUser);
+userRouter.post("/users/:id", adminRoleAuth, deleteUser);
 // userRouter.put("/users/:id", updateUser);
+
+userRouter.get("/users/userOrder/:id", getUserOrders);

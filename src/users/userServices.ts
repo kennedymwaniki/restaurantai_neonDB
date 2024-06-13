@@ -1,9 +1,8 @@
 import { eq } from "drizzle-orm";
 import db from "../drizzle/db";
-import { TIUser, TSUser, usersTable } from "../drizzle/schema";
+import { TIUser, TSUser, usersTable, ordersTable } from "../drizzle/schema";
 
 export const usersService = async () => {
-
   return await db.query.usersTable.findMany();
 };
 
@@ -30,4 +29,12 @@ export const deleteUserService = async (id: number) => {
   await db.delete(usersTable).where(eq(usersTable.id, id));
   return "User deleted successfully";
 };
-  
+
+//get oorder by a user
+
+export const getUserOrdersService = async (id: number) => {
+  return await db.query.ordersTable.findMany({
+    where: eq(ordersTable.user_id, id),
+  });
+};
+

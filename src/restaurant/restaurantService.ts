@@ -1,4 +1,9 @@
-import { restaurantTable, TIrestaurant, TSrestaurant } from "../drizzle/schema";
+import {
+  restaurantTable,
+  TIrestaurant,
+  TSrestaurant,
+  menuItemTable,
+} from "../drizzle/schema";
 import db from "../drizzle/db";
 
 import { eq } from "drizzle-orm";
@@ -21,7 +26,10 @@ export const createrestaurantService = async (user: TIrestaurant) => {
   return "restaurant created successfully";
 };
 
-export const updaterestaurantService = async (id: number, user: TIrestaurant) => {
+export const updaterestaurantService = async (
+  id: number,
+  user: TIrestaurant
+) => {
   await db.update(restaurantTable).set(user).where(eq(restaurantTable.id, id));
   return "restaurant updated successfully";
 };
@@ -29,4 +37,10 @@ export const updaterestaurantService = async (id: number, user: TIrestaurant) =>
 export const deleterestaurantService = async (id: number) => {
   await db.delete(restaurantTable).where(eq(restaurantTable.id, id));
   return "restaurant deleted successfully";
+};
+
+export const getMenuItemsByRestaurantIdService = async (id: number) => {
+  return await db.query.menuItemTable.findMany({
+    where: eq(menuItemTable.restaurant_id, id),
+  });
 };

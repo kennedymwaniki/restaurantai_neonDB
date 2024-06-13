@@ -1,4 +1,4 @@
-import { stateTable, TIstate, TSstate } from "../drizzle/schema";
+import { stateTable, TIstate, TSstate, cityTable } from "../drizzle/schema";
 import db from "../drizzle/db";
 
 import { eq } from "drizzle-orm";
@@ -29,4 +29,10 @@ export const updateStateService = async (id: number, user: TIstate) => {
 export const deletestateService = async (id: number) => {
   await db.delete(stateTable).where(eq(stateTable.id, id));
   return "state deleted successfully";
+};
+
+export const getStateCitiesService = async (id: number) => {
+  return await db.query.cityTable.findMany({
+    where: eq(cityTable.state_id, id),
+  });
 };

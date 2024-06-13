@@ -5,6 +5,7 @@ import {
   createCommentService,
   deleteCommentService,
   getCommentService,
+  getCommentsByUserIdService,
   updateCommentService,
 } from "./commentService";
 
@@ -71,6 +72,27 @@ export const deleteComment = async (c: Context) => {
 
     if (!deletedStateMsg) return c.text("comment not deleted", 404);
     return c.json({ msg: deletedStateMsg }, 200);
+  } catch (error: any) {
+    console.error(error?.message);
+    return c.json({ error: error?.message }, 500);
+  }
+};
+
+// Controller to handle fetching comments by user ID
+export const getCommentsByUserId = async (c: Context) => {
+  try {
+    const id = parseInt(c.req.param("id"));
+    console.log(id);
+    if (isNaN(id)) {
+      return c.text("Invalid User ID", 400);
+    }
+
+    const comments = await getCommentsByUserIdService(id);
+    console.log(comments);
+    if (!comments.length)
+      return c.text("No comments found for the given user ID", 404);
+
+    return c.json(comments, 200);
   } catch (error: any) {
     console.error(error?.message);
     return c.json({ error: error?.message }, 500);

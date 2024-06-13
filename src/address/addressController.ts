@@ -1,7 +1,11 @@
 import { Hono } from "hono";
 import { type Context } from "hono";
 import {
-addressService,createAddressService,deleteAddressService,getAddressService,updateAddressService
+  addressService,
+  createAddressService,
+  deleteAddressService,
+  getAddressService,
+  updateAddressService,
 } from "./addressService";
 
 // get all users
@@ -62,10 +66,11 @@ export const deleteAddress = async (c: Context) => {
   try {
     const id = parseInt(c.req.param("id"));
     if (isNaN(id)) return c.text("Invalid ID", 400);
+    // if (!id) return c.text("No such ID is available");
 
     const deletedStateMsg = await deleteAddressService(id);
 
-    if (!deletedStateMsg) return c.text("Address not deleted", 404);
+    if (!deletedStateMsg) return c.text("NO such address Found", 404);
     return c.json({ msg: deletedStateMsg }, 200);
   } catch (error: any) {
     console.error(error?.message);

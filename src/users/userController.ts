@@ -7,15 +7,8 @@ import {
   usersService,
   updateUserService,
   deleteUserService,
+  getUserOrdersService,
 } from "./userServices";
-
-const users = [
-  { id: 1, name: "John Doe", email: "john@example.com" },
-  { id: 2, name: "Jane Doe", email: "jane@example.com" },
-  { id: 3, name: "Allison", email: "allison@gmail.com" },
-  { id: 4, name: "neddy mwaniki", email: "kennedymwaniki@hotmail.com" },
-  { id: 5, name: "ivy kimani", email: "ivykimani@example.com" },
-];
 
 // get all users
 export const listUsers = async (c: Context) => {
@@ -24,10 +17,10 @@ export const listUsers = async (c: Context) => {
 };
 
 //get one user
-export const getUser = (c: Context) => {
-  const id = c.req.param("id");
+export const getUser = async (c: Context) => {
+  const id = parseInt(c.req.param("id"));
   console.log(id);
-  const user = users.find((user) => user.id === parseInt(id, 10));
+  const user = await getUserService(id);
   if (!user) {
     return c.json({ error: "User not found" }, 404);
   }
@@ -88,3 +81,14 @@ export const deleteUser = async (c: Context) => {
   }
 };
 
+export const getUserOrders = async (c: Context) => {
+  const userId = Number(c.req.param("id"));
+  if (isNaN(userId)) return c.text("Invalid ID", 400);
+
+  try {
+    const orders = await getUserOrdersService(userId);
+    return c.json(orders, 200);
+  } catch (error: any) {
+    return c.json({ error: error?.message }, 400);
+  }
+};

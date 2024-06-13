@@ -1,4 +1,4 @@
-import { restaurantOwnerTable, TIowner, TSowner } from "../drizzle/schema";
+import { restaurantOwnerTable, TIowner, TSowner, menuItemTable } from "../drizzle/schema";
 import db from "../drizzle/db";
 
 import { eq } from "drizzle-orm";

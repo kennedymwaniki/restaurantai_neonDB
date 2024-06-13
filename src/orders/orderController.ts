@@ -1,7 +1,12 @@
 import { Hono } from "hono";
 import { type Context } from "hono";
 import {
-createOrdersService, deleteOrdersService,getOrdersService,ordersService,updateOrdersService
+  createOrdersService,
+  deleteOrdersService,
+  getOrdersService,
+  ordersService,
+  updateOrdersService,
+  getOrdersByDriverIdService,
 } from "./orderService";
 
 // get all users
@@ -70,5 +75,20 @@ export const deleteOrder = async (c: Context) => {
   } catch (error: any) {
     console.error(error?.message);
     return c.json({ error: error?.message }, 500);
+  }
+};
+
+export const getOrdersByDriverId = async (c: Context) => {
+  try {
+    const id = parseInt(c.req.param("id"));
+    console.log(id);
+    if (isNaN(id)) {
+      return c.text("Invalid Driver ID", 400);
+    }
+
+    const orders = await getOrdersByDriverIdService(id);
+    return c.json(orders, 200);
+  } catch (error: any) {
+    return c.json({ error: error?.message }, 400);
   }
 };

@@ -6,9 +6,11 @@ import {
   deleterestaurant,
   getrestaurant,
   updaterestaurant,
+  getMenuItemsByRestaurantId,
 } from "./restaurantController";
 export const restaurantRouter = new Hono();
 
+restaurantRouter.get("/restaurant/menuItems/:id", getMenuItemsByRestaurantId);
 restaurantRouter.get("/restaurant", listrestaurant);
 restaurantRouter.get("/restaurant/:id", getrestaurant);
 restaurantRouter.post("/restaurant", createrestaurant);

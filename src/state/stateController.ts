@@ -6,6 +6,7 @@ import {
   createStateService,
   getStateService,
   updateStateService,
+  getStateCitiesService,
 } from "./stateService";
 
 // get all users
@@ -74,5 +75,17 @@ export const deleteState = async (c: Context) => {
   } catch (error: any) {
     console.error(error?.message);
     return c.json({ error: error?.message }, 500);
+  }
+};
+
+export const getStateCities = async (c: Context) => {
+  try {
+    const stateID = Number(c.req.param("id"));
+    if (isNaN(stateID)) return c.text("Invalid ID", 400);
+
+    const city = await getStateCitiesService(stateID);
+    return c.json(city, 200);
+  } catch (error: any) {
+    return c.json({ error: error?.message }, 400);
   }
 };

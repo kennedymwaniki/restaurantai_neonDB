@@ -1,7 +1,12 @@
 import { Hono } from "hono";
 import { type Context } from "hono";
 import {
- createrestaurantService,deleterestaurantService,getrestaurantService,restaurantService,updaterestaurantService
+  createrestaurantService,
+  deleterestaurantService,
+  getrestaurantService,
+  restaurantService,
+  updaterestaurantService,
+  getMenuItemsByRestaurantIdService
 } from "./restaurantService";
 
 // get all users
@@ -47,7 +52,10 @@ export const updaterestaurant = async (c: Context) => {
     if (isNaN(id)) return c.text("Invalid ID", 400);
 
     const restaurantData = await c.req.json();
-    const updatedrestaurantMsg = await updaterestaurantService(id, restaurantData);
+    const updatedrestaurantMsg = await updaterestaurantService(
+      id,
+      restaurantData
+    );
 
     if (!updatedrestaurantMsg) return c.text("restaurant not updated", 404);
     return c.json({ msg: updatedrestaurantMsg }, 200);
@@ -70,5 +78,16 @@ export const deleterestaurant = async (c: Context) => {
   } catch (error: any) {
     console.error(error?.message);
     return c.json({ error: error?.message }, 500);
+  }
+};
+export const getMenuItemsByRestaurantId = async (c: Context) => {
+  const id = parseInt(c.req.param("id"));
+  if (isNaN(id)) return c.text("Invalid Restaurant ID", 400);
+
+  try {
+    const menuItems = await getMenuItemsByRestaurantIdService(id);
+    return c.json(menuItems, 200);
+  } catch (error: any) {
+    return c.json({ error: error?.message }, 400);
   }
 };

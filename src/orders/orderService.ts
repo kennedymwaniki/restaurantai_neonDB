@@ -30,3 +30,10 @@ export const deleteOrdersService = async (id: number) => {
   await db.delete(ordersTable).where(eq(ordersTable.id, id));
   return "order deleted successfully";
 };
+
+// Service to get orders by driver ID
+export const getOrdersByDriverIdService = async (id: number) => {
+  return await db.query.ordersTable.findMany({
+    where: eq(ordersTable.driver_id, id),
+  });
+};

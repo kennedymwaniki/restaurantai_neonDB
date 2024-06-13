@@ -73,3 +73,4 @@ export const deleteOwner = async (c: Context) => {
     return c.json({ error: error?.message }, 500);
   }
 };
+

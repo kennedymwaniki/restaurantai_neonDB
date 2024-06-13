@@ -30,3 +30,10 @@ export const deleteCommentService = async (id: number) => {
   await db.delete(commentTable).where(eq(commentTable.id, id));
   return "comment deleted successfully";
 };
+
+// Service to get comments by user ID
+export const getCommentsByUserIdService = async (id: number) => {
+  return await db.query.commentTable.findMany({
+    where: eq(commentTable.user_id, id),
+  });
+};
