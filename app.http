@@ -1,7 +1,7 @@
 
 ###
 GET http://localhost:8000/api/users/2
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
+# Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 
 ###
 GET http://localhost:8000/api/users
@@ -112,24 +112,24 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:8000/api/state/2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 
 
 
 //city
 ###
 GET http://localhost:8000/api/cities
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 ###
 DELETE http://localhost:8000/api/cities/6
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
 
 ###
 GET http://localhost:8000/api/cities/2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 ###
 POST http://localhost:8000/api/cities
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 Content-Type: application/json
 
 {
@@ -140,7 +140,7 @@ Content-Type: application/json
 
 ###
 POST http://localhost:8000/api/cities
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 Content-Type: application/json
 
 {
@@ -154,14 +154,15 @@ Content-Type: application/json
 //ADDRESSES
 ###
 GET http://localhost:8000/api/address
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 ### //by id
 
 GET http://localhost:8000/api/address/3
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 
 ### //creating
 POST http://localhost:8000/api/address
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 Content-Type: application/json
 
 {
@@ -177,16 +178,17 @@ Content-Type: application/json
 
 ### ///delete
 DELETE http://localhost:8000/api/address/2
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 
 
 ###
 //category
 GET http://localhost:8000/api/category
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 ###
 
 GET http://localhost:8000/api/category/3
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 ###
 POST http://localhost:8000/api/category
 Content-Type: application/json
@@ -199,10 +201,11 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:8000/api/category/23
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyNzg0NTd9.l5jww1Gq85StrNwe9MjtYa6kvRzF0qL3D2qyoG0HFPM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 ###
 
 PUT http://localhost:8000/api/category/9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
 Content-Type: application/json
 
 {

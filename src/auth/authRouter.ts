@@ -15,6 +15,8 @@ authRouter.post(
   }),
   registerUser
 );
+
+
 authRouter.post(
   "/login",
   zValidator("json", loginUserSchema, (result, c) => {
