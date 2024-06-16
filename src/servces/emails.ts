@@ -20,6 +20,8 @@ export const sendWelcomeEmail = async (
     html,
   };
 
+  //hello
+
   try {
     const info = await transporter.sendMail(mailOptions);
     console.log("Email sent: " + info.response);
