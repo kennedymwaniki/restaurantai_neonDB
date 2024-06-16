@@ -3,6 +3,7 @@ import "dotenv/config";
 import { createAuthUserServce, loginAuthService } from "./authService";
 import bycrpt from "bcrypt";
 import { sign } from "hono/jwt";
+import { sendWelcomeEmail } from "../servces/emails";
 
 export const registerUser = async (c: Context) => {
   try {
@@ -18,7 +19,52 @@ export const registerUser = async (c: Context) => {
 
     const createdUser = await createAuthUserServce(user);
     if (!createdUser) return c.text("User not created ", 404);
-    return c.json({ msg: createdUser }, 201);
+
+    // Send welcome email after successful user creation
+    const subject = "Welcome to Our Restaurant Management System";
+    const html = `
+    <html>
+      <head>
+        <style>
+          /* Inline CSS for basic styling */
+          .email-container {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+          }
+          .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+          }
+          .btn:hover {
+            background-color: #0056b3;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="email-container">
+          <p>Hello, ${user.username}</p>
+          <p>Thank you for registering with our Restaurant Management System!</p>
+          <p>Welcome to our system!</p>
+          <p>We help you manage your restaurant.</p>
+
+          <img src="https://wallpapercave.com/wp/wp2038248.jpg" alt="Image" style="max-width: 100%; height: auto;">
+          <a class="btn" href="restaurantapinoen.azurewebsites.net">Visit our Website</a>
+        </div>
+      </body>
+    </html>
+  `;
+
+    // Send welcome email after successful user creation.
+    await sendWelcomeEmail(user.email, subject, html);
+
+    return c.json({ msg: "User created successfully" }, 201);
   } catch (error: any) {
     return c.json({ error: error?.message }, 500);
   }

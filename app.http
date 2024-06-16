@@ -5,7 +5,7 @@ GET http://localhost:8000/api/users/2
 
 ###
 GET http://localhost:8000/api/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpdnkiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTg1NDQ4MDR9.oKzMxyUPx1gLHJMrOsic8T6jKnKGL8iNHwirrUQrpLM
 ###
 
 //user orders
@@ -335,12 +335,15 @@ POST http://localhost:8000/api/auth/register
 Content-Type: application/json
 
 {
-
- "userId": 2,
-  "password": "0000",
-  "username": "viv",
-  "role": "admin"
-
+   "userId": 1,
+   "name": "Kennedy",
+   "username":"ken",
+    "contact_phone": "true",
+    "email": "kennedymwaniki089@gmail.com",
+    "email_verified": true,
+    "password": "12345",
+    "confirmation_code": "xz55y",
+    "role":"admin"
 }
 
 
@@ -351,7 +354,7 @@ Content-Type: application/json
 {
 
   "password": "0000",
-  "username": "viv"
+  "username": "ivy"
 
 }
 ###
