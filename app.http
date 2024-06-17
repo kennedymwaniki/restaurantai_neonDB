@@ -60,18 +60,18 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoi
 ###
 //update
 POST http://localhost:8000/api/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aXYiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTUxOTd9.WBOtkZUqRPckDFJ2oDqOA8EkR653QJKUmbj6HByFsuk
+Authorization: 
 Content-Type: application/json
 
 {
-  "name": "TIFF",
-    "contact_phone": "182828373",
-    "phone_verified": true,
-    "email": "YUNO@gmail.com",
-    "email_verified": true,
-    "confirmation_code": "2030",
-    "password": "1234"
-  }
+    "name": "Jane siue",
+    "contact_phone": "555-5678",
+    "phone_verified": false,
+    "email": "jane@gmail.com",
+    "email_verified": false,
+    "confirmation_code": "EFGH5678",
+    "password": "pass456"
+}
 
 
 ###
@@ -335,15 +335,16 @@ POST http://localhost:8000/api/auth/register
 Content-Type: application/json
 
 {
-   "userId": 1,
-   "name": "Kennedy",
-   "username":"ken",
+
+   "name": "Tiffany",
+   "username":"Tiffany",
     "contact_phone": "true",
-    "email": "kennedymwaniki089@gmail.com",
+    "email": "mwanikitiffany@gmail.com",
     "email_verified": true,
     "password": "12345",
     "confirmation_code": "xz55y",
     "role":"admin"
+
 }
 
 
@@ -352,9 +353,8 @@ POST http://localhost:8000/api/auth/login
 Content-Type: application/json
 
 {
-
-  "password": "0000",
-  "username": "ivy"
+  "password": "12345",
+  "username": "joshua"
 
 }
 ###

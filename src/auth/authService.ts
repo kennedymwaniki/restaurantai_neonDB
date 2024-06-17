@@ -10,7 +10,7 @@ import {
   usersTable,
 } from "../drizzle/schema";
 
-export const createAuthUserServce = async (user:any) => {
+export const createAuthUserServce = async (user: any) => {
   try {
     // Insert user into `usersTable` table
     const createdUser = await db
@@ -25,6 +25,7 @@ export const createAuthUserServce = async (user:any) => {
         password: user.password,
       })
       .returning();
+    console.log("servise:", createdUser);
 
     // Extract the created user ID
     const userId = createdUser[0].id;
@@ -33,7 +34,7 @@ export const createAuthUserServce = async (user:any) => {
     await db.insert(authUsers).values({
       userId,
       password: user.password,
-      username: user.username,
+      username: user.name,
       role: user.role || "user",
     });
 
