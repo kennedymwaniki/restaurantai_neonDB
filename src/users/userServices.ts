@@ -3,7 +3,14 @@ import db from "../drizzle/db";
 import { TIUser, TSUser, usersTable, ordersTable } from "../drizzle/schema";
 
 export const usersService = async () => {
-  return await db.query.usersTable.findMany();
+  return await db.query.usersTable.findMany({
+    columns: {
+      id: true,
+      name: true,
+      email: true,
+      contact_phone: true,
+    },
+  });
 };
 
 //byID

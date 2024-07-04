@@ -48,9 +48,11 @@ export const registerUser = async (c: Context) => {
             font-size: 24px;
             margin: 0;
             font-weight: normal;
+            color: black;
         }
         .header p {
             font-size: 16px;
+            color: black;
         }
         .btn-container {
             margin-top: 20px;
@@ -70,12 +72,12 @@ export const registerUser = async (c: Context) => {
             padding: 30px 20px;
         }
         .content h2 {
-            font-size: 20px;
+            font-size: 25px;
             margin: 0;
             font-weight: normal;
         }
         .content p {
-            font-size: 14px;
+            font-size: 18px;
         }
         .footer {
             background-color: #333333;
@@ -129,7 +131,11 @@ export const loginUser = async (c: Context) => {
     // console.log(foundUser);
     if (!foundUser) return c.text("User not found", 404);
 
-    // validate password
+    if (!foundUser.username || foundUser.password) {
+      return c.json("Invalid username or password", 400);
+    }
+
+    // validate  user password
     const isValid = await bycrpt.compare(
       user.password,
       foundUser?.password as string
